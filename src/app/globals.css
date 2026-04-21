@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-width: 1920px;
+  --ink: #0f2238;
+  --paper: #fffdfa;
+  --sand: #f4efdf;
+  --accent: #ea7b36;
+  --accent-deep: #cc5d20;
+  --mint: #2f9c86;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-geist-sans), "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% -5%, rgba(234, 123, 54, 0.2), transparent 28%),
+    radial-gradient(circle at 90% 0%, rgba(47, 156, 134, 0.17), transparent 34%),
+    linear-gradient(180deg, #f6f1e2 0%, #f9f5ea 45%, #f0ece3 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-grid > * {
+  animation: riseIn 0.45s ease both;
+}
+
+.stagger-grid > *:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.stagger-grid > *:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.stagger-grid > *:nth-child(4) {
+  animation-delay: 0.18s;
+}
+
+.stagger-grid > *:nth-child(5) {
+  animation-delay: 0.24s;
+}
+
+.stagger-grid > *:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+@layer utilities {
+  .text-balance {
+    overflow-wrap: anywhere;
+  }
+}
