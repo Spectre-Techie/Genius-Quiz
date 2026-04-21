@@ -1,93 +1,104 @@
-# QuizForge Arena
+# Genius Quiz
 
-QuizForge Arena is a Next.js and Tailwind CSS quiz app with timed questions, live scoring, and a results dashboard.
+Genius Quiz is a modern quiz web app built with Next.js and Tailwind CSS. It focuses on fast question rounds, clear feedback, and measurable progress.
 
-## Live Demo
+## Repository
 
-Run locally at [http://localhost:3000](http://localhost:3000) after starting the dev server.
+GitHub: [Spectre-Techie/Genius-Quiz](https://github.com/Spectre-Techie/Genius-Quiz)
 
 ## Features
 
-### 1. Subject Selection
+- Subject-based quizzes loaded from `public/data/questions.json`.
+- 10-second timer for each question.
+- +4 points for each correct answer.
+- Visual answer feedback (correct, wrong, unattempted).
+- Results dashboard with score, percentage, and time metrics.
+- Retake quiz action from results page.
+- Direct navigation back to homepage from results page.
+- Responsive UI for desktop and mobile.
 
-- Choose a subject from the home page.
-- Questions are loaded from JSON in `public/data/questions.json`.
+## Tech Stack
 
-### 2. Timed Quiz
-
-- Each question has a 10-second countdown.
-- If time runs out, the question is marked as unattempted.
-
-### 3. Answer Validation
-
-- Correct options are highlighted.
-- Incorrect selected options are marked for immediate feedback.
-
-### 4. Scoring System
-
-- Each correct answer gives 4 points.
-- Current points are visible in the header.
-
-### 5. Results Dashboard
-
-- Final score and earned points.
-- Correct, wrong, and unattempted counts.
-- Percentage, total time spent, and average time per question.
-
-### 6. Responsive UI
-
-- Optimized for desktop and mobile screens.
-
-## Technologies Used
-
-- Next.js
+- Next.js 14 (App Router)
+- React 18
 - Tailwind CSS
-- React Icons
+- react-icons
 - react-confetti
 - react-use
+- @vercel/speed-insights
 
-## How to Run
+## Getting Started
 
 ### 1. Clone
 
 ```bash
-git clone https://github.com/AmanKumarSinhaGitHub/Quiz-App-in-NextJS.git
+git clone https://github.com/Spectre-Techie/Genius-Quiz.git
 ```
 
-### 2. Enter Project Folder
+### 2. Enter the project folder
 
 ```bash
-cd quiz-app
+cd Genius-Quiz
 ```
 
-### 3. Install Dependencies
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start Development Server
+### 4. Start development server
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
+
+## Available Scripts
+
+- `npm run dev` - start local development server.
+- `npm run build` - create production build.
+- `npm run start` - run production server.
+- `npm run lint` - run lint checks.
+
+## Predeployment Checks
+
+Run these before deployment:
+
+```bash
+npm run lint
+npm run build
+```
+
+Optional production smoke test:
+
+```bash
+npm run start -- -p 3001
+```
+
+Then test:
+
+- `/`
+- `/quiz/coding`
+- `/favicon.ico`
 
 ## Project Structure
 
-- `public/data/`: quiz data source.
-- `public/images/`: static images.
-- `src/app/`: App Router pages and layout.
-- `src/components/`: UI components.
-- `src/context/`: shared React context.
+- `public/data/` - quiz question data.
+- `public/images/` - static image assets.
+- `src/app/` - routes, layout, global styles, favicon.
+- `src/components/` - reusable UI components.
+- `src/context/` - shared React context state.
+- `src/config/` - app branding configuration.
 
-## Future Improvements
+## Development Note
 
-- Add authentication and user profiles.
-- Add difficulty levels and adaptive quizzes.
-- Move data to backend API/database.
+This project uses separate Next.js artifact directories to avoid chunk/cache collisions:
 
-## Contributions
+- Development uses `.next-dev`
+- Production build uses `.next`
 
-Contributions are welcome via issues and pull requests.
+## License
+
+For personal and educational use.
